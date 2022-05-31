@@ -5,6 +5,7 @@ import com.example.demo.Services.MobServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import javax.ws.rs.QueryParam;
 
 import java.util.List;
 
@@ -30,10 +31,15 @@ public class MobController {
         return  services.putModify(mob);
     }
 
-    @DeleteMapping
-    public void delete(@PathVariable("id") int id){
+    @DeleteMapping("/delete")
+    public void delete(@QueryParam("id") int id){
         services.delete(id);
     }
+
+    //@DeleteMapping("/delete/{id}")
+    //public void delete(@PathVariable("id") int id){
+     //   services.delete(id);
+    //}
 
 
 

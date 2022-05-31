@@ -9,10 +9,9 @@ import java.util.List;
 @Repository
 public interface IMobRepository extends JpaRepository<Mob, Long> {
     List<Mob> findAll();
-    Mob findAllById(int id);
     Mob save(Mob mod);
+
     @Override
     void delete(Mob mob);
-
     Mob findById(int id);
 }
