@@ -39,4 +39,9 @@ public class ItemController {
     public void delete(@PathVariable("id") int id){
         itemServices.delete(id);
     }
+
+    @DeleteMapping("/delete")
+    public void eliminar (@RequestParam("id") int id){
+        itemServices.delete(id);
+    }
 }
