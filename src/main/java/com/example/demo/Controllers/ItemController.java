@@ -30,7 +30,7 @@ public class ItemController {
         return  itemServices.modify(item);
     }
 
-    @DeleteMapping("delete")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable("id") int id){
         itemServices.delete(id);
     }
