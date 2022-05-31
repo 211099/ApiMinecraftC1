@@ -4,6 +4,8 @@ import com.example.demo.Entities.Item;
 import com.example.demo.Repositories.IItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -17,6 +19,10 @@ public class ItemServices {
         return iItemRepository.findAll();
     }
 
+    public  Item getIte(int id){
+        Item ites = iItemRepository.findById(id);
+        return ites;
+    }
     public Item add(Item item){
         return iItemRepository.save(item);
     }

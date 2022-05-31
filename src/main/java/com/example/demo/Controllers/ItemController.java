@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @RestController
@@ -19,6 +20,10 @@ public class ItemController {
         return itemServices.getItem();
     }
 
+    @GetMapping("/item")
+    public Item getItem(@QueryParam("id") int id){
+        return itemServices.getIte(id);
+    }
     @PostMapping("/addItem")
     public Item add(@RequestBody @Validated Item item){
         System.out.println("Entre");
