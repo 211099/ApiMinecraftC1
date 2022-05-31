@@ -14,4 +14,8 @@ public class MobServices {
     private IMobRepository crudService;
 
     public List<Mob> getList(){return  crudService.findAll(); }
+
+    public Mob postAdd(Mob mob){
+        return crudService.save(mob);
+    }
 }
