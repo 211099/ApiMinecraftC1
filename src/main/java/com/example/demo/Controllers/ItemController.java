@@ -3,9 +3,8 @@ package com.example.demo.Controllers;
 import com.example.demo.Entities.Item;
 import com.example.demo.Services.ItemServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,11 @@ public class ItemController {
     @GetMapping("list")
     public List<Item> listItem(){
         return itemServices.getItem();
+    }
+
+    @PostMapping("/addItem")
+    public Item add(@RequestBody @Validated Item item){
+        System.out.println("Entre");
+        return  itemServices.add(item);
     }
 }
