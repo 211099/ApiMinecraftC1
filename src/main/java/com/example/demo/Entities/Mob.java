@@ -57,4 +57,5 @@ public class Mob {
     public void setDamage(float damage) {
         this.damage = damage;
     }
+
 }

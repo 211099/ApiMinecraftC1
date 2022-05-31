@@ -14,4 +14,5 @@ public interface IMobRepository extends JpaRepository<Mob, Long> {
     @Override
     void delete(Mob mob);
 
+    Mob findById(int id);
 }

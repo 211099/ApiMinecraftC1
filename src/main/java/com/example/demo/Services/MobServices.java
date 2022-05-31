@@ -18,4 +18,13 @@ public class MobServices {
     public Mob postAdd(Mob mob){
         return crudService.save(mob);
     }
+
+    public Mob PostModify(Mob mob){
+        Mob modify = crudService.findById(mob.getId());
+        modify.setName(mob.getName());
+        modify.setNature(mob.getNature());
+        modify.setDamage(mob.getDamage());
+        return crudService.save(modify);
+    }
+
 }
