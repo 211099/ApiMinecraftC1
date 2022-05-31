@@ -24,4 +24,11 @@ public class ItemController {
         System.out.println("Entre");
         return  itemServices.add(item);
     }
+
+    @PutMapping("/modifi")
+    public Item modify(@RequestBody @Validated Item item){
+        return  itemServices.modify(item);
+    }
+
+
 }

@@ -20,4 +20,13 @@ public class ItemServices {
     public Item add(Item item){
         return iItemRepository.save(item);
     }
+
+    public Item modify(Item item){
+        Item modify = iItemRepository.findById(item.getId());
+        modify.setName(item.getName());
+        modify.setStack(item.getStack());
+        modify.setDescription(item.getDescription());
+        return iItemRepository.save(modify);
+    }
+
 }
