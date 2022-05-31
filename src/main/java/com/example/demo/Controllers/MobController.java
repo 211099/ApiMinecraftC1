@@ -32,9 +32,18 @@ public class MobController {
     }
 
     @DeleteMapping("/delete")
-    public void delete(@QueryParam("id") int id){
+    public void delete(@RequestParam("id") int id){
         services.delete(id);
     }
+
+    @GetMapping("/listid")
+    public Mob getItem(@QueryParam("id") int id){
+        return services.getIteId(id);
+    }
+    //@DeleteMapping("/delete")
+    //public void delete(@QueryParam("id") int id){
+    //    services.delete(id);
+    //}
 
     //@DeleteMapping("/delete/{id}")
     //public void delete(@PathVariable("id") int id){

@@ -34,5 +34,9 @@ public class MobServices {
         Mob mobid = crudService.findById(id);
         crudService.delete(mobid);
     }
+    public Mob getIteId(int id){
+        Mob mobId = crudService.findById(id);
+        return mobId;
+    }
 
 }
