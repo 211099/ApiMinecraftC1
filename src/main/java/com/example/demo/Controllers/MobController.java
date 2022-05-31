@@ -25,11 +25,15 @@ public class MobController {
         return services.postAdd(mob);
     }
 
-    @PostMapping
+    @PutMapping
     public Mob PostModify(@RequestBody @Validated Mob mob){
-        return  services.PostModify(mob);
+        return  services.putModify(mob);
     }
 
+    @DeleteMapping
+    public void delete(@PathVariable("id") int id){
+        services.delete(id);
+    }
 
 
 
