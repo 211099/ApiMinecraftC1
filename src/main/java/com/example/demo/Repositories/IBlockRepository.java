@@ -10,4 +10,6 @@ public interface IBlockRepository extends JpaRepository<Block,Long>{
     List<Block> findAll();
     Block Save(Block block);
     Void Delete (Block block);
+
+    Block findById(int id);
 }
