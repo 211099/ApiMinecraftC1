@@ -28,5 +28,8 @@ public class ItemServices {
         modify.setDescription(item.getDescription());
         return iItemRepository.save(modify);
     }
-
+    public void delete(int id){
+        Item item1 = iItemRepository.findById(id);
+        iItemRepository.delete(item1);
+    }
 }
