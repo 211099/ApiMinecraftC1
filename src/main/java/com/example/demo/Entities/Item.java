@@ -25,7 +25,7 @@ public class Item {
         this.description  = description;
     }
 
-    public Item(){};
+    public Item(){}
 
     public int getId(){
         return id;
